@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <div class="navbar-content">
+      <a routerLink="/" class="logo">SercHWeb</a>
+      <div class="nav-links">
+        <a routerLink="/">Home</a>
+        <a routerLink="/features">Features</a>
+        <a routerLink="/services">Services</a>
+        <a routerLink="/portfolio">Portfolio</a>
+        <a routerLink="/contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" (click)="toggleMobileMenu()">☰</button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+      <a routerLink="/" (click)="toggleMobileMenu()">Home</a>
+      <a routerLink="/features" (click)="toggleMobileMenu()">Features</a>
+      <a routerLink="/services" (click)="toggleMobileMenu()">Services</a>
+      <a routerLink="/portfolio" (click)="toggleMobileMenu()">Portfolio</a>
+      <a routerLink="/contact" (click)="toggleMobileMenu()">Contact</a>
+    </div>
+  </nav>

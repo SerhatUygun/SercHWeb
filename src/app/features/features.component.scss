@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Navbar styles from previous page */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Features Page Specific Styles */
+.features-hero {
+    padding-top: 100px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.features-hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.features-hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.features-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.feature-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.detailed-features {
+    background: var(--light-bg);
+    padding: 5rem 5%;
+}
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto 6rem auto;
+}
+
+.feature-row:last-child {
+    margin-bottom: 0;
+}
+
+.feature-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-image {
+    flex: 1;
+    position: relative;
+}
+
+.feature-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent-color);
+    color: var(--white);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-section {
+    padding: 5rem 5%;
+    background: var(--white);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.price {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.feature-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.feature-list li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.comparison-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 4rem auto;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-bg);
+}
+
+.comparison-table th {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .feature-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-row {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
