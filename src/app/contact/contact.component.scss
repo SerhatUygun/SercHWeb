@@ -65,6 +65,35 @@ body {
     color: var(--primary-color);
 }
 
+/* Mobile Menu */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        gap: 1rem;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+}
+
 .contact-hero {
     padding: 150px 5% 100px;
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
@@ -75,12 +104,24 @@ body {
     font-size: 3.5rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 2rem;
+    }
 }
 
 .contact-hero p {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
 }
 
 .contact-section {
@@ -92,6 +133,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 .contact-info {
@@ -103,6 +149,11 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
 .info-icon {
@@ -154,6 +205,11 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 100%;
+
+    @media (min-width: 769px) {
+        width: auto;
+    }
 }
 
 .submit-btn:hover {
@@ -168,19 +224,4 @@ body {
 .map-container {
     border-radius: 20px;
     overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .contact-hero h1 {
-        font-size: 2.5rem;
-    }
 }

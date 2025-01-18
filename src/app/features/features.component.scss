@@ -68,7 +68,7 @@ body {
     }
 
     .subtitle {
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 2vw, 1.25rem);
         color: var(--light-text);
         margin-bottom: 2rem;
     }
@@ -78,9 +78,10 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
 
     button {
-        margin: 0 10px 10px 0;
+        margin: 0;
         padding: 10px 20px;
         font-size: 1rem;
         cursor: pointer;
@@ -88,8 +89,9 @@ body {
         border-radius: 4px;
         transition: all 0.3s ease;
 
-        &:last-child {
-            margin-right: 0;
+        @media (max-width: 480px) {
+            width: 100%;
+            max-width: 300px;
         }
     }
 }
@@ -120,20 +122,20 @@ body {
     margin-bottom: 4rem;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
         color: var(--text-color);
         margin-bottom: 1rem;
     }
 
     p {
         color: var(--light-text);
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
     }
 }
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -156,7 +158,7 @@ body {
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
         margin-bottom: 1rem;
         color: var(--text-color);
     }
@@ -194,6 +196,8 @@ body {
 .feature-tabs {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-bottom: 2rem;
 
     button {
@@ -209,12 +213,17 @@ body {
             color: var(--primary-color);
             border-bottom: 2px solid var(--primary-color);
         }
+
+        @media (max-width: 480px) {
+            flex: 1 1 40%;
+            padding: 5px 10px;
+        }
     }
 }
 
 .detailed-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -229,7 +238,7 @@ body {
             width: 100%;
             border-radius: 0.5rem;
             margin-bottom: 1rem;
-            object-fit: cover; // Makes sure images don't distort
+            object-fit: cover;
         }
 
         .feature-tag {
@@ -245,7 +254,7 @@ body {
 
     .feature-content {
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
             color: var(--text-color);
             margin-bottom: 1rem;
         }
@@ -293,8 +302,8 @@ body {
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: var(--card-shadow);
-    max-width: 300px;  // Limits the width of the card
-    max-height: 500px; // Limits the height of the card
+    max-width: 300px;  
+    max-height: 500px; 
     display: flex;
     flex-direction: column;
 
@@ -304,23 +313,23 @@ body {
 
     .pricing-header {
         h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
             color: var(--text-color);
             margin-bottom: 1rem;
         }
 
         .price {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             color: var(--primary-color);
             margin-bottom: 1rem;
 
             .currency {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 vertical-align: super;
             }
 
             .period {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 color: var(--light-text);
                 vertical-align: sub;
             }
@@ -330,9 +339,9 @@ body {
     .features-list {
         list-style: none;
         padding-left: 0;
-        margin-bottom: auto;  // Pushes the button to the bottom
-        flex-grow: 1;  // Allows the list to grow and fill available space
-        overflow-y: auto;  // Adds scrollbar if content overflows
+        margin-bottom: auto;
+        flex-grow: 1;
+        overflow-y: auto;
 
         li {
             display: flex;
@@ -359,7 +368,7 @@ body {
         cursor: pointer;
         font-size: 1rem;
         transition: background 0.3s ease;
-        margin-top: auto;  // Pushes the button to the bottom
+        margin-top: auto;
 
         &:hover {
             background: var(--secondary-color);
@@ -374,7 +383,7 @@ body {
 
     .cta-content {
         h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
             color: var(--text-color);
             margin-bottom: 1rem;
         }
@@ -385,12 +394,16 @@ body {
         }
 
         .cta-buttons {
-            button {
-                margin: 0 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
 
+            button {
+                margin: 0;
                 @media (max-width: 480px) {
-                    display: block;
-                    margin: 10px auto;
+                    width: 100%;
+                    max-width: 300px;
                 }
             }
         }
@@ -416,11 +429,6 @@ body {
     .categories-grid, .detailed-features-grid, .pricing-grid {
         grid-template-columns: 1fr;
     }
-
-    .hero-buttons button, .cta-buttons button {
-        display: block;
-        margin: 10px auto;
-    }
 }
 
 @media (max-width: 480px) {
@@ -430,5 +438,10 @@ body {
 
     .section-padding {
         padding: 3rem 5%;
+    }
+
+    .hero-buttons button, .cta-buttons button {
+        display: block;
+        margin: 10px auto;
     }
 }
