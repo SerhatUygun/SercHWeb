@@ -2,78 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SercHWeb - Contact Us</title>
 
+    <title>SercHWeb - Contact Us</title>
+    <script src="https://unpkg.com/aos2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
 
     <section class="contact-hero">
-        <div data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
             <h1>Get in Touch</h1>
             <p>Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
         </div>
     </section>
 
     <section class="contact-section">
-        <div class="contact-container">
-            <div class="contact-info" data-aos="fade-right">
-                <h2>Contact Information</h2>
-                <p>Feel free to reach out to us through any of these channels:</p>
-                
-                <div class="info-item">
-                    <img src="/api/placeholder/24/24" alt="Location" class="info-icon">
-                    <div>
-                        <h3>Our Office</h3>
-                        <p>123 Business Street<br>Tech District, City 12345</p>
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Contact Information</h2>
+                    <p>Feel free to reach out to us through any of these channels:</p>
+                    
+                    <div class="info-item">
+                        <img src="https://picsum.photos/seed/location/100/100" alt="Location" class="info-icon">
+                        <div>
+                            <h3>Our Office</h3>
+                            <p>123 Business Street<br>Tech District, City 12345</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <img src="https://picsum.photos/seed/email/100/100" alt="Email" class="info-icon">
+                        <div>
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:infoserchweb.com">infoserchweb.com</a><br><a href="mailto:supportserchweb.com">supportserchweb.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <img src="https://picsum.photos/seed/phone/100/100" alt="Phone" class="info-icon">
+                        <div>
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a><br><a href="tel:+15559876543">+1 (555) 987-6543</a></p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="info-item">
-                    <img src="/api/placeholder/24/24" alt="Email" class="info-icon">
-                    <div>
-                        <h3>Email Us</h3>
-                        <p>infoserchweb.com<br>supportserchweb.com</p>
-                    </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <h2>Send us a Message</h2>
+                    <form action="https://formspree.io/f/meoobqdo" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required aria-label="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" name="email" required aria-label="Enter your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" name="subject" required aria-label="Enter the subject of your message">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message:</label>
+                            <textarea id="message" name="message" rows="5" required aria-label="Enter your message"></textarea>
+                        </div>
+
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
-
-                <div class="info-item">
-                    <img src="/api/placeholder/24/24" alt="Phone" class="info-icon">
-                    <div>
-                        <h3>Call Us</h3>
-                        <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form" data-aos="fade-left">
-                <h2>Send us a Message</h2>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
             </div>
         </div>
     </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.1619156282547!2d-122.08408278472263!3d37.3853475798975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425dad8f%3A0x6d8085b0b9017826!2s123%20Business%20St%2C%20Mountain%20View%2C%20CA%2094043%2C%20USA!5e0!3m2!1sen!2str!4v1694556050171!5m2!1sen!2str" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

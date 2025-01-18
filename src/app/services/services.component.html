@@ -1,165 +1,74 @@
 <section class="services-hero">
-    <div>
-      <h1>Our Services</h1>
-      <p>We deliver comprehensive digital solutions tailored to your business needs. From web development to digital marketing, we've got you covered.</p>
-    </div>
-  </section>
-  
-  <section class="main-services">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p>We deliver comprehensive digital solutions tailored to your business needs. From web development to digital marketing, we've got you covered.</p>
+  </div>
+</section>
+
+<section class="main-services">
+  <div class="container">
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="/assets/images/icons/web-dev.png" alt="Web Development">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon" [style.background-image]="'url(' + service.icon + ')'">
+          <h3>{{service.title}}</h3>
         </div>
-        <h3>Web Development</h3>
-        <p>Custom web solutions built with cutting-edge technologies for optimal performance and user experience.</p>
+        <p>{{service.description}}</p>
         <ul class="service-features">
-          <li>Responsive Design</li>
-          <li>Custom CMS Integration</li>
-          <li>E-commerce Solutions</li>
-          <li>Performance Optimization</li>
-          <li>SEO-friendly Structure</li>
-        </ul>
-      </div>
-  
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="/assets/images/icons/mobile-dev.png" alt="Mobile Development">
-        </div>
-        <h3>Mobile Development</h3>
-        <p>Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
-        <ul class="service-features">
-          <li>iOS Development</li>
-          <li>Android Development</li>
-          <li>Cross-platform Solutions</li>
-          <li>App Store Optimization</li>
-          <li>Mobile UI/UX Design</li>
-        </ul>
-      </div>
-  
-      <div class="service-card">
-        <div class="service-icon">
-          <img src="/assets/images/icons/ui-ux.png" alt="UI/UX Design">
-        </div>
-        <h3>UI/UX Design</h3>
-        <p>User-centered design solutions that create engaging and intuitive digital experiences.</p>
-        <ul class="service-features">
-          <li>User Research</li>
-          <li>Wireframing & Prototyping</li>
-          <li>Visual Design</li>
-          <li>Usability Testing</li>
-          <li>Design Systems</li>
+          <li *ngFor="let feature of service.features">{{feature}}</li>
         </ul>
       </div>
     </div>
-  </section>
-  
-  <section class="service-detail">
-    <div class="detail-container">
+  </div>
+</section>
+
+<section class="service-detail" *ngFor="let detail of detailedServices; let i = index">
+  <div class="container">
+    <div class="detail-container" [ngClass]="{'reverse': i % 2 !== 0}">
       <div class="detail-content">
-        <h2>Web Development</h2>
-        <p>Our web development services are designed to create powerful, scalable, and secure web applications that drive business growth.</p>
+        <h2>{{detail.title}}</h2>
+        <p>{{detail.description}}</p>
         <ul class="service-features">
-          <li>Custom Website Development</li>
-          <li>E-commerce Solutions</li>
-          <li>Progressive Web Apps</li>
-          <li>Content Management Systems</li>
-          <li>API Development & Integration</li>
-          <li>Cloud Solutions</li>
-          <li>Website Maintenance & Support</li>
+          <li *ngFor="let feature of detail.features">{{feature}}</li>
         </ul>
       </div>
       <div class="detail-image">
-        <img src="/assets/images/web-dev.jpg" alt="Web Development Process">
+        <img [src]="detail.image" [alt]="detail.title + ' Process'">
       </div>
     </div>
-  </section>
-  
-  <section class="service-detail">
-    <div class="detail-container">
-      <div class="detail-image">
-        <img src="/assets/images/mobile-dev.jpg" alt="Mobile Development Process">
-      </div>
-      <div class="detail-content">
-        <h2>Mobile Development</h2>
-        <p>We create innovative mobile applications that engage users and deliver real business value across all platforms.</p>
-        <ul class="service-features">
-          <li>Native iOS & Android Apps</li>
-          <li>Cross-platform Development</li>
-          <li>Mobile App UI/UX Design</li>
-          <li>App Testing & QA</li>
-          <li>App Store Optimization</li>
-          <li>App Maintenance & Updates</li>
-          <li>Integration with Backend Systems</li>
-        </ul>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="container">
+    <h2>Our Development Process</h2>
+    <div class="process-steps">
+      <div class="process-step" *ngFor="let step of processSteps; let i = index">
+        <div class="step-number">{{i + 1}}</div>
+        <h3>{{step.title}}</h3>
+        <p>{{step.description}}</p>
       </div>
     </div>
-  </section>
-  
-  <section class="process-section">
-    <div class="process-container">
-      <h2>Our Development Process</h2>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h3>Discovery</h3>
-          <p>Understanding your requirements and business goals</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h3>Planning</h3>
-          <p>Creating detailed project roadmap and architecture</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h3>Development</h3>
-          <p>Building your solution with agile methodology</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h3>Launch</h3>
-          <p>Deploying and maintaining your solution</p>
-        </div>
+  </div>
+</section>
+
+<section class="tech-section">
+  <div class="container">
+    <h2>Technologies We Use</h2>
+    <div class="tech-grid">
+      <div class="tech-item" *ngFor="let tech of technologies">
+        <img [src]="tech.image" [alt]="tech.name">
+        <p>{{tech.name}}</p>
       </div>
     </div>
-  </section>
-  
-  <section class="tech-section">
-    <div>
-      <h2>Technologies We Use</h2>
-      <div class="tech-grid">
-        <div class="tech-item">
-          <img src="/assets/images/tech/react.png" alt="React">
-          <p>React</p>
-        </div>
-        <div class="tech-item">
-          <img src="/assets/images/tech/angular.png" alt="Angular">
-          <p>Angular</p>
-        </div>
-        <div class="tech-item">
-          <img src="/assets/images/tech/vue.png" alt="Vue.js">
-          <p>Vue.js</p>
-        </div>
-        <div class="tech-item">
-          <img src="/assets/images/tech/node.png" alt="Node.js">
-          <p>Node.js</p>
-        </div>
-        <div class="tech-item">
-          <img src="/assets/images/tech/python.png" alt="Python">
-          <p>Python</p>
-        </div>
-        <div class="tech-item">
-          <img src="/assets/images/tech/php.png" alt="PHP">
-          <p>PHP</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="cta-section">
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
     <div class="cta-content">
       <h2>Ready to Transform Your Business?</h2>
       <p>Let's discuss how our services can help you achieve your goals.</p>
-      <a href="#" class="cta-button">Contact Us</a>
+      <a href="/contact" class="cta-button">Contact Us</a>
     </div>
-  </section>
+  </div>
+</section>

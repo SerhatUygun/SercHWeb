@@ -1,52 +1,48 @@
 <section class="hero-section" id="home">
   <div class="hero-content">
-      <div class="hero-text" data-aos="fade-right">
-          <h1>Custom Web Solutions for Your Business</h1>
-          <p>We design professional websites, admin panels, and e-commerce platforms tailored to your needs.</p>
-          <a href="#contact" class="cta-button">Get Started</a>
+    <div class="hero-text" [@fadeIn]="'in'">
+      <h1>Custom Web Solutions for Your Business</h1>
+      <p>We design professional websites, admin panels, and e-commerce platforms tailored to your unique business needs.</p>
+      <div class="cta-buttons">
+        <a href="contact" class="cta-button primary">Get Started</a>
+        <a href="features" class="cta-button secondary">Learn More</a>
       </div>
-      <div class="hero-image" data-aos="fade-left">
-          <img src="/api/placeholder/600/400" alt="SercHWeb Services" class="floating-element">
-      </div>
+    </div>
+    <div class="hero-image" [@slideIn]="'in'">
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="SercHWeb Services" class="floating-element">
+      <div class="shape-1"></div>
+      <div class="shape-2"></div>
+    </div>
   </div>
 </section>
 
 <section id="features" class="section-container">
-  <h2 class="section-title" data-aos="fade-up">Why Choose Us?</h2>
+  <h2 class="section-title" [@fadeIn]="'in'">Why Choose Us?</h2>
   <div class="features-grid">
-      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature-icon">🚀</div>
-          <h3>Innovative Solutions</h3>
-          <p>We bring creative ideas to life with cutting-edge technology.</p>
-      </div>
-      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature-icon">🛠️</div>
-          <h3>24/7 Support</h3>
-          <p>Our team is always here to support your digital journey.</p>
-      </div>
-      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature-icon">📈</div>
-          <h3>Scalability</h3>
-          <p>Our solutions grow with your business needs.</p>
-      </div>
+    <div class="feature-card" *ngFor="let feature of features; let i = index" 
+         [@cardAnimation]="'in'" 
+         [attr.data-aos-delay]="i * 100">
+      <div class="feature-icon">{{feature.icon}}</div>
+      <h3>{{feature.title}}</h3>
+      <p>{{feature.description}}</p>
+      <a [href]="feature.link" class="feature-button">
+        Learn More
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
   </div>
 </section>
 
-<section class="stats-section">
+<section id="stats" class="stats-section" [@scrollAnimation]="'in'">
   <div class="section-container">
-      <div class="stats-grid">
-          <div class="stat-item" data-aos="fade-up">
-              <div class="number" data-target="150">0</div>
-              <p>Websites Created</p>
-          </div>
-          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="number" data-target="1000">0</div>
-              <p>Happy Clients</p>
-          </div>
-          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="number" data-target="5000">0</div>
-              <p>Hours of Development</p>
-          </div>
+    <div class="stats-grid">
+      <div class="stat-item" *ngFor="let stat of stats">
+        <div class="number" [attr.data-target]="stat.value">0</div>
+        <p>{{stat.label}}</p>
+        <div class="stat-progress">
+          <div class="progress-bar" [style.width.%]="stat.progress"></div>
+        </div>
       </div>
+    </div>
   </div>
 </section>
