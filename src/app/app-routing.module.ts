@@ -5,6 +5,7 @@ import { FeaturesComponent } from './features/features.component';
 import { ContactComponent } from './contact/contact.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ServicesComponent } from './services/services.component';
+import { KuryeComponent } from './kurye/kurye.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Ana sayfa
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent }, // İletişim sayfası
   { path: 'portfolio', component: PortfolioComponent }, // Portföy sayfası
   { path: 'services', component: ServicesComponent } // Hizmetler sayfası
+  { path: 'Kurye', component:KuryeComponent  } // Hizmetler sayfası
 ];
 
 @NgModule({
