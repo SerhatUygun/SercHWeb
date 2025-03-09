@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'features', component: FeaturesComponent }, // Özellikler sayfası
   { path: 'contact', component: ContactComponent }, // İletişim sayfası
   { path: 'portfolio', component: PortfolioComponent }, // Portföy sayfası
-  { path: 'services', component: ServicesComponent } // Hizmetler sayfası
-  { path: 'Kurye', component:KuryeComponent  } // Hizmetler sayfası
+  { path: 'services', component: ServicesComponent }, // Hizmetler sayfası
+  { path: 'Kurye', component:KuryeComponent  } // silinecek
 ];
 
 @NgModule({
