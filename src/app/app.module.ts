@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ServicesComponent } from './services/services.component';
+import { KuryeComponent } from './kurye/kurye.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ServicesComponent } from './services/services.component';
     ContactComponent,
     PortfolioComponent,
     ServicesComponent,
+    KuryeComponent,
     
   ],
   imports: [
